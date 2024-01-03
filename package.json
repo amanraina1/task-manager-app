@@ -1,0 +1,19 @@
+{
+  "name": "task-manager-app",
+  "version": "1.0.0",
+  "description": "full stack task manager app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanraina1/task-manager-app.git"
+  },
+  "author": "Aman Raina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amanraina1/task-manager-app/issues"
+  },
+  "homepage": "https://github.com/amanraina1/task-manager-app#readme"
+}
