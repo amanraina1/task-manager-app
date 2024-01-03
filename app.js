@@ -1,19 +1,18 @@
 const express = require("express");
 const connectDB = require("./db/connect");
 const tasks = require("./routes/tasks");
+const notFound = require("./middlewares/not-found");
+const errorHandlerMiddleware = require("./middlewares/error-handler");
 require("dotenv").config();
 
 const app = express();
 
-//middleware
+//middlewares
 app.use(express.json());
-
-// routes
-app.get("/", (req, res) => {
-  res.send("Hello Aman");
-});
-
 app.use("/api/v1/tasks", tasks);
+app.use(notFound);
+app.use(errorHandlerMiddleware);
+
 const start = async () => {
   try {
     await connectDB(process.env.MONGODB_URI);
