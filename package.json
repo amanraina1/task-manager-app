@@ -4,7 +4,7 @@
   "description": "full stack task manager app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/amanraina1/task-manager-app/issues"
   },
-  "homepage": "https://github.com/amanraina1/task-manager-app#readme"
+  "homepage": "https://github.com/amanraina1/task-manager-app#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
