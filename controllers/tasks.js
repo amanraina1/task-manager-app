@@ -22,7 +22,9 @@ const handleGetTask = async (req, res) => {
   try {
     const getTask = await Task.findById(req.params.id);
     if (!getTask) {
-      return res.status(500).json({ message: "No user found" });
+      return res
+        .status(404)
+        .json({ message: `No user found with this id: ${req.params.id}` });
     }
     res.status(200).json(getTask);
   } catch (error) {
@@ -34,7 +36,9 @@ const handleUpdateTask = async (req, res) => {
   try {
     const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body);
     if (!updatedTask) {
-      return res.status(404).json({ message: "No user found with this id" });
+      return res
+        .status(404)
+        .json({ message: `No user found with this id: ${req.params.id}` });
     }
     res.status(200).json({ message: "User updated successfully" });
   } catch (error) {
@@ -46,7 +50,9 @@ const handleDeleteTask = async (req, res) => {
   try {
     const updatedTask = await Task.findByIdAndDelete(req.params.id, req.body);
     if (!updatedTask) {
-      return res.status(404).json({ message: "No user found with this id" });
+      return res
+        .status(404)
+        .json({ message: `No user found with this id: ${req.params.id}` });
     }
     res.status(200).json({ message: "User deleted successfully" });
   } catch (error) {
