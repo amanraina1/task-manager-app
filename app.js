@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./db/connect");
 const tasks = require("./routes/tasks");
 const notFound = require("./middlewares/not-found");
+const cors = require("cors");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
 require("dotenv").config();
 
@@ -9,6 +10,7 @@ const app = express();
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 app.use("/api/v1/tasks", tasks);
 app.use(notFound);
 app.use(errorHandlerMiddleware);
