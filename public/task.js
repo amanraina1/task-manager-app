@@ -1,5 +1,4 @@
 // GET A SINGLE TASK
-
 var id = window.localStorage.getItem("id");
 async function patch() {
   const dataApi = await fetch(`http://localhost:3000/api/v1/tasks/${id}`);
@@ -37,6 +36,27 @@ checkBox.addEventListener("click", async () => {
     method: "PATCH",
     body: JSON.stringify({
       completed: checkBox.checked,
+    }),
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+});
+
+//EDIT A TASK
+var textWritten = "";
+const input = document.getElementsByClassName("write");
+input[0].addEventListener("keyup", (e) => {
+  textWritten = e.target.value;
+});
+const editBtn = document.getElementsByClassName("edit-task");
+editBtn[0].addEventListener("click", async () => {
+  await fetch(`http://localhost:3000/api/v1/tasks/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      name: textWritten,
     }),
     headers: {
       "Content-type": "application/json",
