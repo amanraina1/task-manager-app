@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 form {
-  height: 45%;
+  height: 55%;
   width: 45%;
   background-color: #fff;
   display: flex;
@@ -29,7 +29,7 @@ form {
   align-items: center;
   margin-top: -170px;
   margin-bottom: 100px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.1);
 }
 form h4 {
   letter-spacing: 3px;

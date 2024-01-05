@@ -14,9 +14,13 @@ async function patch() {
 }
 async function upadte(json) {
   const p = document.getElementsByClassName("task-para");
+  const date = document.getElementsByClassName("date");
+  const updateDate = document.getElementsByClassName("update-date");
   const input = document.getElementsByClassName("write");
 
   p[0].innerText = json._id;
+  updateDate[0].innerText = json.updatedAt;
+  date[0].innerText = json.createdAt;
   input[0].setAttribute("value", json.name);
 }
 document.addEventListener("DOMContentLoaded", patch);
