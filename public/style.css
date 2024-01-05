@@ -76,3 +76,7 @@ section .icons-left .line {
 section .icons-left .check {
   color: #32e26d;
 }
+.delete {
+  color: #c22424;
+  cursor: pointer;
+}

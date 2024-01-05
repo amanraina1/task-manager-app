@@ -78,6 +78,10 @@ form button {
   cursor: pointer;
   border-radius: 5px;
 }
+.form-control input {
+  font-size: 19px;
+  font-weight: 200;
+}
 .form-control label {
   padding-left: 50px;
 }
