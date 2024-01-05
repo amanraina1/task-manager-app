@@ -66,4 +66,13 @@ section {
   width: 44%;
   padding: 15px;
   margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+section .icons-left .line {
+  text-decoration: line-through;
+}
+section .icons-left .check {
+  color: #32e26d;
 }
