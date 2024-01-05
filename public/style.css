@@ -61,6 +61,12 @@ button {
   align-items: center;
   flex-direction: column;
 }
+
+#bottom-box .emptyText {
+  font-size: 25px;
+  color: #645cff;
+}
+
 section {
   background-color: #fff;
   width: 44%;

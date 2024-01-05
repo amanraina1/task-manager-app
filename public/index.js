@@ -44,6 +44,13 @@ const data = async () => {
   const finalData = await apiData.json();
   const app = finalData.allTasks;
 
+  if (!app.length) {
+    const empty = document.createElement("div");
+    empty.textContent = "OOPS!! NOTHING TO SEE HERE....";
+    empty.setAttribute("class", "emptyText");
+    bottomBox.appendChild(empty);
+  }
+
   app.map((task) => {
     const ul = document.createElement("section");
     if (task.completed) {
