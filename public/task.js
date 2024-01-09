@@ -12,16 +12,18 @@ async function patch() {
   }
   upadte(json);
 }
-async function upadte(json) {
-  const p = document.getElementsByClassName("task-para");
-  const date = document.getElementsByClassName("date");
-  const updateDate = document.getElementsByClassName("update-date");
-  const input = document.getElementsByClassName("write");
 
-  p[0].innerText = json._id;
-  updateDate[0].innerText = json.updatedAt;
-  date[0].innerText = json.createdAt;
-  input[0].setAttribute("value", json.name);
+async function upadte(json) {
+  const p = document.querySelector(".task-para");
+  const date = document.querySelector(".date");
+  const updateDate = document.querySelector(".update-date");
+  console.log(json);
+  const input = document.querySelector(".write");
+
+  p.innerText = json._id;
+  updateDate.innerText = json.updatedAt;
+  date.innerText = json.createdAt;
+  input.setAttribute("value", json.name);
 }
 document.addEventListener("DOMContentLoaded", patch);
 
@@ -51,12 +53,12 @@ checkBox.addEventListener("click", async () => {
 
 //EDIT A TASK
 var textWritten = "";
-const input = document.getElementsByClassName("write");
-input[0].addEventListener("keyup", (e) => {
+const input = document.querySelector(".write");
+input.addEventListener("keyup", (e) => {
   textWritten = e.target.value;
 });
-const editBtn = document.getElementsByClassName("edit-task");
-editBtn[0].addEventListener("click", async () => {
+const editBtn = document.querySelector(".edit-task");
+editBtn.addEventListener("click", async () => {
   await fetch(`http://localhost:3000/api/v1/tasks/${id}`, {
     method: "PATCH",
     body: JSON.stringify({
